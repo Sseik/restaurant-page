@@ -1,7 +1,5 @@
 import path from "node:path";
 import HTMLWebpackPlugin from "html-webpack-plugin";
-import { watchFile } from "node:fs";
-import { clear } from "node:console";
 
 export default {
   mode: "development",
@@ -15,7 +13,7 @@ export default {
   devServer: {
     watchFiles: ["./src/template.html"],
   },
-  plugins: [new HTMLWebpackPlugin("./src/template.html")],
+  plugins: [new HTMLWebpackPlugin({ template: "./src/template.html" })],
   module: {
     rules: [
       {
