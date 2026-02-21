@@ -14,6 +14,7 @@ nav {
   column-gap: 20px;
   row-gap: 10px;
   font-size: calc(1rem + 0.5vw);
+  min-height: 4rem;
   align-items: center;
 }
 
@@ -27,12 +28,18 @@ button {
   flex-grow: 1;
   outline: none;
   opacity: 0.5;
-  &:hover, &:focus, &.active {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover,
+  &:focus,
+  &.active {
     font-size: 1.1em;
     padding: 0 calc(16px - 0.1em);
     opacity: 1;
   }
-  &:active {
+  &:active:not(.active) {
     font-size: 1em;
   }
 }
