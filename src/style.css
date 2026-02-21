@@ -29,6 +29,7 @@ button {
   outline: none;
   opacity: 0.5;
   height: 4rem;
+  flex-basis: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
