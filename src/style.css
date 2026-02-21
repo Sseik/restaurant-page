@@ -1,0 +1,42 @@
+body {
+  font-family: "Pixelify Sans", sans-serif;
+  padding: min(5%, 64px);
+}
+
+header {
+  margin-bottom: 16px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 10px;
+  font-size: calc(1rem + 0.5vw);
+  align-items: center;
+}
+
+button {
+  border-image: url("./assets/images/Orange-Buttons--Arvin61r58.png") 3;
+  padding: 0 16px;
+  border-radius: 24px;
+  border-width: 16px;
+  image-rendering: pixelated;
+  min-width: 200px;
+  flex-grow: 1;
+  outline: none;
+  opacity: 0.5;
+  &:hover, &:focus, &.active {
+    font-size: 1.1em;
+    padding: 0 calc(16px - 0.1em);
+    opacity: 1;
+  }
+  &:active {
+    font-size: 1em;
+  }
+}
+
+h2 {
+  font-size: calc(2rem + 0.5vw);
+}
