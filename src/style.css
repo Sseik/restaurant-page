@@ -1,6 +1,11 @@
+:root {
+  --border-image: url("./assets/images/Orange-Buttons--Arvin61r58.png");
+}
+
 body {
   font-family: "Pixelify Sans", sans-serif;
   padding: min(5%, 64px);
+  image-rendering: pixelated;
 }
 
 header {
@@ -19,11 +24,10 @@ nav {
 }
 
 button {
-  border-image: url("./assets/images/Orange-Buttons--Arvin61r58.png") 3;
+  border-image: var(--border-image) 3;
   padding: 0 16px;
   border-radius: 24px;
   border-width: 16px;
-  image-rendering: pixelated;
   min-width: 200px;
   flex-grow: 1;
   outline: none;
@@ -47,4 +51,16 @@ button {
 
 h2 {
   font-size: calc(2rem + 0.5vw);
+  margin-bottom: 2rem;
+}
+
+.card {
+  font-size: clamp(1rem, 4vw, 2rem);
+  border-image: var(--border-image) 3;
+  padding: 0 16px;
+  border-radius: 24px;
+  border-width: 16px;
+  border-style: solid;
+  max-width: min(calc(100vw - min(10%, 128px)), 500px);
+  margin: 16px auto;
 }
