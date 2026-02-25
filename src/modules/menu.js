@@ -1,39 +1,41 @@
-import { createCard, createWithClasses } from "./helper.js";
+import { createWithClasses } from "./helper.js";
 import "./menu.css";
+import borschPNG from "../assets/images/Food/Borsch.png";
+import fallbackPNG from "../assets/images/FallbackImage.png";
 
 const foodMenu = [
   {
     category: "Soups",
     items: [
-      "Borsch",
-      "Chicken Broth",
-      "Onion Soup",
-      "Mushroom Cream Soup",
-      "Beef Ramen",
-      "Pork Ramen",
+      { name: "Borsch", image: borschPNG },
+      { name: "Chicken Broth" },
+      { name: "Onion Soup" },
+      { name: "Mushroom Cream Soup" },
+      { name: "Beef Ramen" },
+      { name: "Pork Ramen" },
     ],
-    images: [null, null, null, null, null, null],
   },
   {
     category: "Pasta",
-    items: ["Carbonara", "Fetuccini Alfredo", "Pasta Amatriciana"],
-    images: [null, null, null],
+    items: [
+      { name: "Carbonara" },
+      { name: "Fetuccini Alfredo" },
+      { name: "Pasta all'Amatriciana" },
+    ],
   },
   {
     category: "Salads",
-    items: ["Ceasar Salad", "Tuna Salad"],
-    images: [null, null],
+    items: [{ name: "Ceasar Salad" }, { name: "Tuna Salad" }],
   },
   {
     category: "Dessserts",
     items: [
-      "New York Cheesecake",
-      "Basque Cheesecake",
-      "Napoleon Cake",
-      "Brownie",
-      "Chocolate Muffin",
+      { name: "New York Cheesecake" },
+      { name: "Basque Cheesecake" },
+      { name: "Napoleon Cake" },
+      { name: "Brownie" },
+      { name: "Chocolate Muffin" },
     ],
-    images: [null, null, null, null, null],
   },
 ];
 
@@ -41,19 +43,22 @@ const drinksMenu = [
   {
     category: "Hot Drinks",
     items: [
-      "Espresso",
-      "Latte",
-      "Cappuccino",
-      "Flat White",
-      "Herbal Tea",
-      "Hot Chocolate",
+      { name: "Espresso" },
+      { name: "Latte" },
+      { name: "Cappuccino" },
+      { name: "Flat White" },
+      { name: "Herbal Tea" },
+      { name: "Hot Chocolate" },
     ],
-    images: [null, null, null, null, null, null],
   },
   {
     category: "Soft Drinks",
-    items: ["Pixel Cola", "Fanta", "Sprite", "Orange Juice"],
-    images: [null, null, null, null],
+    items: [
+      { name: "Pixel Cola" },
+      { name: "Fanta" },
+      { name: "Sprite" },
+      { name: "Orange Juice" },
+    ],
   },
 ];
 
@@ -73,7 +78,12 @@ function createMenu(headingText, menuArr) {
     const leftArrow = document.createElement("img");
     const itemList = createWithClasses("ul", "", "item-list");
     for (let item of section.items) {
-      const listItem = createWithClasses("li", item, "menu-item");
+      const listItem = createWithClasses("li", "", "menu-item");
+      const image = document.createElement("img");
+      image.src = item.image ?? fallbackPNG;
+      image.alt = `Picture of ${item.name}`;
+      const nameDiv = createWithClasses("div", item.name, "name");
+      listItem.append(image, nameDiv);
       itemList.appendChild(listItem);
     }
     const rightArrow = document.createElement("img");

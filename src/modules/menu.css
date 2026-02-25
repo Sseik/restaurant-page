@@ -15,17 +15,22 @@
   overflow: scroll;
   & .menu-item {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-image: var(--border-image) 3;
-    padding: 0 16px;
+    padding: 0;
     border-radius: 24px;
     border-width: 16px;
     border-style: solid;
-    width: max(150px, 16%);
+    width: max(170px, 16%);
     aspect-ratio: 1 / 1;
     flex-shrink: 0;
     text-align: center;
-    font-size: clamp(0.9rem, 0.75rem + 0.25vw, 2rem)
+    font-size: clamp(0.9rem, 0.75rem + 0.25vw, 2rem);
+    img {
+      height: 80%;
+      width: auto;
+    }
   }
 }
