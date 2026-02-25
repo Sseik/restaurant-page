@@ -37,16 +37,37 @@ const foodMenu = [
   },
 ];
 
-export default function () {
-  const contentMain = document.querySelector("#content");
-  contentMain.innerHTML = "";
+const drinksMenu = [
+  {
+    category: "Hot Drinks",
+    items: [
+      "Espresso",
+      "Latte",
+      "Cappuccino",
+      "Flat White",
+      "Herbal Tea",
+      "Hot Chocolate",
+    ],
+    images: [null, null, null, null, null, null],
+  },
+  {
+    category: "Soft Drinks",
+    items: ["Pixel Cola", "Fanta", "Sprite", "Orange Juice"],
+    images: [null, null, null, null],
+  },
+];
 
-  const foodMenuDiv = createWithClasses("section", "", "menu");
-  const heading1 = document.createElement("h2");
-  heading1.textContent = "Food";
-  foodMenuDiv.appendChild(heading1);
-  for (let section of foodMenu) {
-    const categoryMenuDiv = createWithClasses("section", "", "category-menu");
+function createMenu(headingText, menuArr) {
+  const menuSection = createWithClasses("section", "", "menu");
+  const h2 = document.createElement("h2");
+  h2.textContent = headingText;
+  menuSection.appendChild(h2);
+  for (let section of menuArr) {
+    const categoryMenuSection = createWithClasses(
+      "section",
+      "",
+      "category-menu",
+    );
     const subheading = createWithClasses("h3", section.category);
     const listContainer = createWithClasses("div", "", "container");
     const leftArrow = document.createElement("img");
@@ -57,12 +78,19 @@ export default function () {
     }
     const rightArrow = document.createElement("img");
     listContainer.append(leftArrow, itemList, rightArrow);
-    categoryMenuDiv.append(subheading, listContainer);
-    foodMenuDiv.appendChild(categoryMenuDiv);
+    categoryMenuSection.append(subheading, listContainer);
+    menuSection.appendChild(categoryMenuSection);
   }
+  return menuSection;
+}
 
-  const heading2 = document.createElement("h2");
-  heading2.textContent = "Drinks";
+export default function () {
+  const contentMain = document.querySelector("#content");
+  contentMain.innerHTML = "";
 
-  contentMain.append(foodMenuDiv, heading2);
+  const foodMenuSection = createMenu("Food", foodMenu);
+
+  const drinksMenuSection = createMenu("Drinks", drinksMenu);
+
+  contentMain.append(foodMenuSection, drinksMenuSection);
 }
