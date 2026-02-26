@@ -1,5 +1,6 @@
 import "./home.css";
 import { createCard, createWithClasses } from "./helper";
+import chefHeadPNG from "../assets/images/ChefHead.png";
 
 const review = `
   Best non-existing restaurant ever! No food tastes bad because it doesn't exist.
@@ -22,6 +23,9 @@ export default function () {
   const reviewCard = createCard();
   const reviewDiv = createWithClasses("div", review, "review");
   const authorDiv = createWithClasses("div", reviewAuthor, "author");
+  const chefHeadImage = document.createElement("img");
+  chefHeadImage.src = chefHeadPNG;
+  authorDiv.appendChild(chefHeadImage);
   reviewCard.append(reviewDiv, authorDiv);
 
   const scheduleCard = createCard();
