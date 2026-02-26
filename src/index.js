@@ -23,14 +23,14 @@ menuButton.addEventListener("click", () => {
   import("./modules/menu.js").then((module) => {
     module.default();
   });
-  changeActiveButton(homeButton);
+  changeActiveButton(menuButton);
 });
 
 aboutButton.addEventListener("click", () => {
   import("./modules/about.js").then((module) => {
     module.default();
   });
-  changeActiveButton(homeButton);
+  changeActiveButton(aboutButton);
 });
 
 import("./modules/home.js").then((module) => {
