@@ -15,25 +15,26 @@ function changeActiveButton(button) {
 homeButton.addEventListener("click", () => {
   import("./modules/home.js").then((module) => {
     module.default();
-    changeActiveButton(homeButton);
   });
+  changeActiveButton(homeButton);
 });
 
 menuButton.addEventListener("click", () => {
   import("./modules/menu.js").then((module) => {
     module.default();
-    changeActiveButton(homeButton);
   });
+  changeActiveButton(homeButton);
 });
 
 aboutButton.addEventListener("click", () => {
   import("./modules/about.js").then((module) => {
     module.default();
-    changeActiveButton(homeButton);
   });
+  changeActiveButton(homeButton);
 });
 
 import("./modules/home.js").then((module) => {
   module.default();
-  changeActiveButton(homeButton);
 });
+
+changeActiveButton(homeButton);
