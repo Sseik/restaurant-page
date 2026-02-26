@@ -75,7 +75,6 @@ function createMenu(headingText, menuArr) {
     );
     const subheading = createWithClasses("h3", section.category);
     const listContainer = createWithClasses("div", "", "container");
-    const leftArrow = document.createElement("img");
     const itemList = createWithClasses("ul", "", "item-list");
     for (let item of section.items) {
       const listItem = createWithClasses("li", "", "menu-item");
@@ -86,8 +85,7 @@ function createMenu(headingText, menuArr) {
       listItem.append(image, nameDiv);
       itemList.appendChild(listItem);
     }
-    const rightArrow = document.createElement("img");
-    listContainer.append(leftArrow, itemList, rightArrow);
+    listContainer.appendChild(itemList);
     categoryMenuSection.append(subheading, listContainer);
     menuSection.appendChild(categoryMenuSection);
   }
