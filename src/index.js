@@ -1,5 +1,6 @@
 import "./reset.css";
 import "./style.css";
+import loadHome from "./modules/home.js";
 
 const homeButton = document.querySelector("#home-button");
 const menuButton = document.querySelector("#menu-button");
@@ -13,9 +14,7 @@ function changeActiveButton(button) {
 }
 
 homeButton.addEventListener("click", () => {
-  import("./modules/home.js").then((module) => {
-    module.default();
-  });
+  loadHome();
   changeActiveButton(homeButton);
 });
 
@@ -33,8 +32,5 @@ aboutButton.addEventListener("click", () => {
   changeActiveButton(aboutButton);
 });
 
-import("./modules/home.js").then((module) => {
-  module.default();
-});
-
+loadHome();
 changeActiveButton(homeButton);
