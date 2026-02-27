@@ -9,7 +9,7 @@ export default {
     path: path.resolve(import.meta.dirname, "dist"),
     clean: true,
   },
-  devtool: "eval-source-map",
+  devtool: "source-map",
   devServer: {
     watchFiles: ["./src/template.html"],
   },
